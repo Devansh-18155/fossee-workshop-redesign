@@ -12,9 +12,14 @@ import Profile from './pages/Profile'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div style={{
+        backgroundColor: '#0a0a0f',
+        minHeight: '100vh',
+        color: '#ffffff',
+        fontFamily: 'Inter, system-ui, sans-serif'
+      }}>
         <Navbar />
-        <main className="flex-grow">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
