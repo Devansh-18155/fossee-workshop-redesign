@@ -2,111 +2,163 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const workshops = [
-  { id: 1, title: "Python for Beginners", instructor: "Prof. Anil Kumar", date: "April 15, 2026", location: "IIT Bombay", seats: 30, tag: "Python", color: "from-yellow-500 to-orange-500" },
-  { id: 2, title: "Scilab Fundamentals", instructor: "Prof. Meena Shah", date: "April 20, 2026", location: "IIT Madras", seats: 25, tag: "Scilab", color: "from-green-500 to-teal-500" },
-  { id: 3, title: "Advanced Django Development", instructor: "Prof. Rahul Verma", date: "May 1, 2026", location: "IIT Delhi", seats: 20, tag: "Django", color: "from-purple-500 to-pink-500" },
-  { id: 4, title: "Data Science with Python", instructor: "Prof. Priya Nair", date: "May 10, 2026", location: "IIT Kharagpur", seats: 35, tag: "Python", color: "from-blue-500 to-cyan-500" },
-  { id: 5, title: "Linux Essentials", instructor: "Prof. Suresh Iyer", date: "May 15, 2026", location: "IIT Roorkee", seats: 40, tag: "Linux", color: "from-gray-500 to-slate-600" },
-  { id: 6, title: "OpenFOAM Workshop", instructor: "Prof. Deepak Joshi", date: "May 20, 2026", location: "IIT Kanpur", seats: 15, tag: "OpenFOAM", color: "from-red-500 to-rose-500" },
+  {
+    id: 1,
+    title: "Python for Beginners",
+    instructor: "Prof. Anil Kumar",
+    tag: "Python",
+    date: "April 15, 2026",
+    location: "IIT Bombay",
+    seats: 30,
+    totalSeats: 50,
+  },
+  {
+    id: 2,
+    title: "Scilab Fundamentals",
+    instructor: "Prof. Meena Shah",
+    tag: "Scilab",
+    date: "April 20, 2026",
+    location: "IIT Madras",
+    seats: 12,
+    totalSeats: 40,
+  },
+  {
+    id: 3,
+    title: "Advanced Django Dev",
+    instructor: "Prof. Rahul Verma",
+    tag: "Django",
+    date: "May 1, 2026",
+    location: "IIT Delhi",
+    seats: 8,
+    totalSeats: 35,
+  },
+  {
+    id: 4,
+    title: "Data Science with Python",
+    instructor: "Prof. Priya Nair",
+    tag: "Python",
+    date: "May 10, 2026",
+    location: "IIT Kharagpur",
+    seats: 35,
+    totalSeats: 60,
+  },
+  {
+    id: 5,
+    title: "Linux Essentials",
+    instructor: "Prof. Suresh Iyer",
+    tag: "Linux",
+    date: "May 15, 2026",
+    location: "IIT Roorkee",
+    seats: 40,
+    totalSeats: 55,
+  },
+  {
+    id: 6,
+    title: "OpenFOAM Workshop",
+    instructor: "Prof. Deepak Joshi",
+    tag: "OpenFOAM",
+    date: "May 20, 2026",
+    location: "IIT Kanpur",
+    seats: 7,
+    totalSeats: 30,
+  },
 ];
+
+const TAGS = ["All", "Python", "Scilab", "Django", "Linux", "OpenFOAM"];
 
 function WorkshopList() {
   const [search, setSearch] = useState("");
+  const [activeTag, setActiveTag] = useState("All");
 
-  const filtered = workshops.filter(w =>
-    w.title.toLowerCase().includes(search.toLowerCase()) ||
-    w.tag.toLowerCase().includes(search.toLowerCase()) ||
-    w.location.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtered = workshops.filter((w) => {
+    const matchesTag = activeTag === "All" || w.tag === activeTag;
+    const searchLower = search.toLowerCase();
+    const matchesSearch = 
+      w.title.toLowerCase().includes(searchLower) ||
+      w.location.toLowerCase().includes(searchLower) ||
+      w.tag.toLowerCase().includes(searchLower);
+    return matchesTag && matchesSearch;
+  });
 
   return (
-    <div style={{ backgroundColor: '#0a0a0f', minHeight: '100vh' }} className="px-4 py-24">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-purple-300 mb-4"
-            style={{ background: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.2)' }}>
-            <span className="w-2 h-2 bg-purple-400 rounded-full" style={{ animation: 'pulse 2s infinite' }} />
-            {filtered.length} Workshops Available
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Explore <span className="gradient-text">Workshops</span>
-          </h1>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Browse and book workshops on open-source tools from top institutions
-          </p>
+    <div className="min-h-screen bg-gray-900 px-4 py-12 md:py-16">
+      <div className="max-w-6xl mx-auto space-y-8">
+        
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <h1 className="text-3xl font-bold text-white">Explore Workshops</h1>
+          <p className="text-gray-400">Browse and book workshops from top institutions.</p>
         </div>
 
-        {/* Search */}
-        <div className="relative mb-10 max-w-2xl mx-auto">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">🔍</span>
-          <input
+        <div className="max-w-xl mx-auto space-y-4">
+          <input 
             type="text"
-            placeholder="Search by title, tool or location..."
+            placeholder="Search by title, tool, or location..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-4 py-4 rounded-2xl text-white text-sm focus:outline-none"
-            style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              backdropFilter: 'blur(10px)'
-            }}
+            className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
           />
-        </div>
-
-        {/* Cards Grid */}
-        {filtered.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-5xl mb-4">🔍</p>
-            <p className="text-gray-400 text-lg">No workshops found for "{search}"</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {filtered.map((w, i) => (
-              <div
-                key={w.id}
-                className="rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  animationDelay: `${i * 0.1}s`
-                }}
+          <div className="flex flex-wrap justify-center gap-2">
+            {TAGS.map(tag => (
+              <button 
+                key={tag}
+                onClick={() => setActiveTag(tag)}
+                className={`px-3 py-1 text-sm rounded-full border transition ${
+                  activeTag === tag 
+                    ? "bg-blue-600 border-blue-600 text-white" 
+                    : "bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
+                }`}
               >
-                {/* Gradient Top Bar */}
-                <div className={`bg-gradient-to-r ${w.color} p-6`}>
-                  <span className="bg-white/20 backdrop-blur text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    {w.tag}
-                  </span>
-                  <h2 className="text-white font-bold text-xl mt-3 mb-1">{w.title}</h2>
-                  <p className="text-white/70 text-sm">by {w.instructor}</p>
-                </div>
-
-                {/* Card Body */}
-                <div className="p-5">
-                  <div className="space-y-2 mb-5">
-                    <p className="text-gray-400 text-sm flex items-center gap-2">
-                      <span>📅</span> {w.date}
-                    </p>
-                    <p className="text-gray-400 text-sm flex items-center gap-2">
-                      <span>📍</span> {w.location}
-                    </p>
-                    <p className="text-gray-400 text-sm flex items-center gap-2">
-                      <span>🪑</span> {w.seats} seats available
-                    </p>
-                  </div>
-
-                  <Link
-                    to={`/workshops/${w.id}`}
-                    className={`block text-center bg-gradient-to-r ${w.color} text-white py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition`}
-                  >
-                    View Details →
-                  </Link>
-                </div>
-              </div>
+                {tag}
+              </button>
             ))}
           </div>
-        )}
+        </div>
+
+        <div className="pt-4">
+          {filtered.length === 0 ? (
+            <div className="text-center bg-gray-800 border border-gray-700 rounded-lg py-12">
+              <p className="text-gray-400">No workshops match your search criteria.</p>
+              <button 
+                onClick={() => { setSearch(""); setActiveTag("All"); }}
+                className="mt-4 text-blue-400 hover:text-blue-300 text-sm"
+              >
+                Clear filters
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map(w => (
+                <div key={w.id} className="bg-gray-800 border border-gray-700 rounded-lg p-5 flex flex-col justify-between hover:border-gray-600 transition">
+                  <div>
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-semibold px-2 py-1 bg-gray-700 rounded text-gray-300">
+                        {w.tag}
+                      </span>
+                      <span className={`text-xs font-semibold ${w.seats <= 10 ? 'text-red-400' : 'text-gray-400'}`}>
+                        {w.seats} / {w.totalSeats} seats
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">{w.title}</h3>
+                    <p className="text-sm text-gray-400 mb-4">{w.instructor}</p>
+                    
+                    <div className="text-sm text-gray-500 space-y-1 mb-6">
+                      <p>📅 {w.date}</p>
+                      <p>📍 {w.location}</p>
+                    </div>
+                  </div>
+                  
+                  <Link 
+                    to={`/workshops/${w.id}`}
+                    className="block text-center w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white text-sm font-medium transition"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
       </div>
     </div>
   );

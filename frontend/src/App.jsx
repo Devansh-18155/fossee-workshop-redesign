@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -9,9 +10,19 @@ import WorkshopDetails from './pages/WorkshopDetails'
 import ProposeWorkshop from './pages/ProposeWorkshop'
 import Profile from './pages/Profile'
 
+// Scrolls to top instantly on every route change
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
+  return null
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div style={{
         backgroundColor: '#0a0a0f',
         minHeight: '100vh',
@@ -36,4 +47,4 @@ function App() {
   )
 }
 
-export default App
+export default App

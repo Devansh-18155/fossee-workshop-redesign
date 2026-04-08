@@ -2,54 +2,55 @@ import { Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-      <div className="bg-white rounded-2xl shadow-md w-full max-w-md p-8">
-        
-        {/* Header */}
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-gray-800 border border-gray-700 rounded-lg p-6 sm:p-8">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-blue-700">Welcome Back</h1>
-          <p className="text-gray-500 text-sm mt-1">Login to your FOSSEE account</p>
+          <h1 className="text-2xl font-bold text-white">Welcome Back</h1>
+          <p className="text-gray-400 mt-2 text-sm">Login to your FOSSEE account</p>
         </div>
 
-        {/* Form */}
-        <div className="space-y-4">
+        <form className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-300 mb-1">
               Email Address
             </label>
             <input
               type="email"
               placeholder="you@example.com"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-300 mb-1">
               Password
             </label>
             <input
               type="password"
               placeholder="••••••••"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
-          <div className="text-right">
-            <a href="#" className="text-xs text-blue-600 hover:underline">
+          <div className="flex justify-end">
+            <a href="#" className="text-sm text-blue-400 hover:text-blue-300">
               Forgot password?
             </a>
           </div>
 
-          <button className="w-full bg-blue-700 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-600 transition">
+          <button 
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors mt-4"
+          >
             Login
           </button>
-        </div>
+        </form>
 
-        {/* Footer */}
-        <p className="text-center text-sm text-gray-500 mt-6">
+        <p className="text-center text-sm text-gray-400 mt-6">
           Don't have an account?{" "}
-          <Link to="/register" className="text-blue-600 font-medium hover:underline">
+          <Link to="/register" className="text-blue-400 hover:text-blue-300">
             Register
           </Link>
         </p>
