@@ -13,18 +13,18 @@ function Register() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-1">First Name</label>
-              <input 
-                type="text" 
-                placeholder="John" 
+              <input
+                type="text"
+                placeholder="John"
                 className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-1">Last Name</label>
-              <input 
-                type="text" 
-                placeholder="Doe" 
+              <input
+                type="text"
+                placeholder="Doe"
                 className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -33,9 +33,9 @@ function Register() {
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-            <input 
-              type="email" 
-              placeholder="you@example.com" 
+            <input
+              type="email"
+              placeholder="you@example.com"
               className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -43,9 +43,9 @@ function Register() {
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">Username</label>
-            <input 
-              type="text" 
-              placeholder="johndoe123" 
+            <input
+              type="text"
+              placeholder="johndoe123"
               className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -53,9 +53,9 @@ function Register() {
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">Password</label>
-            <input 
-              type="password" 
-              placeholder="••••••••" 
+            <input
+              type="password"
+              placeholder="••••••••"
               className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -63,9 +63,9 @@ function Register() {
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">Confirm Password</label>
-            <input 
-              type="password" 
-              placeholder="••••••••" 
+            <input
+              type="password"
+              placeholder="••••••••"
               className="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -81,7 +81,7 @@ function Register() {
             </select>
           </div>
 
-          <button 
+          <button
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors mt-6"
           >

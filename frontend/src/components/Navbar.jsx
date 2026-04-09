@@ -29,17 +29,16 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex flex-1 items-center justify-end space-x-2">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(link.to)
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.to)
                     ? "bg-gray-900 text-white"
                     : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -76,7 +75,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-gray-800 border-b border-gray-700 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -85,11 +84,10 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isActive(link.to)
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(link.to)
                     ? "bg-gray-900 text-white"
                     : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>

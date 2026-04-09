@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+{/*All the below title and description are taken by ai tool */ }
+
 const features = [
   { title: "Expert Instructors", desc: "Learn from professors at IITs and top institutions." },
   { title: "Hands-on Training", desc: "Practical experience with Python, Scilab, Django and more." },
@@ -9,6 +11,7 @@ const features = [
   { title: "Fast Booking", desc: "Book your spot in seconds with our streamlined process." },
 ];
 
+{/*Here also all the id's, tags, titles and all the required information are taken from ai tool*/ }
 const workshops = [
   {
     id: 1,

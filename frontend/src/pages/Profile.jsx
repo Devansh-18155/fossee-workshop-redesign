@@ -7,7 +7,7 @@ function Profile() {
     email: "devanshpatel6679@gmail.com",
     username: "devansh_1896",
     role: "Student",
-    institute: "VIT BHOPAL",
+    institute: "VIT BHOPAL UNIVERSITY",
     joined: "September 2024",
     workshops: [
       { id: 1, title: "Python for Beginners", date: "April 15, 2026", status: "Upcoming", colorClass: "text-amber-500 bg-amber-500/10" },

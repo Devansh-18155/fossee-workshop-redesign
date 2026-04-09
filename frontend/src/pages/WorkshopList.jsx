@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+{/* All the data values and description are ai generated */ }
 const workshops = [
   {
     id: 1,
@@ -73,7 +74,7 @@ function WorkshopList() {
   const filtered = workshops.filter((w) => {
     const matchesTag = activeTag === "All" || w.tag === activeTag;
     const searchLower = search.toLowerCase();
-    const matchesSearch = 
+    const matchesSearch =
       w.title.toLowerCase().includes(searchLower) ||
       w.location.toLowerCase().includes(searchLower) ||
       w.tag.toLowerCase().includes(searchLower);
@@ -83,14 +84,14 @@ function WorkshopList() {
   return (
     <div className="min-h-screen bg-gray-900 px-4 py-12 md:py-16">
       <div className="max-w-6xl mx-auto space-y-8">
-        
+
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <h1 className="text-3xl font-bold text-white">Explore Workshops</h1>
           <p className="text-gray-400">Browse and book workshops from top institutions.</p>
         </div>
 
         <div className="max-w-xl mx-auto space-y-4">
-          <input 
+          <input
             type="text"
             placeholder="Search by title, tool, or location..."
             value={search}
@@ -99,14 +100,13 @@ function WorkshopList() {
           />
           <div className="flex flex-wrap justify-center gap-2">
             {TAGS.map(tag => (
-              <button 
+              <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
-                className={`px-3 py-1 text-sm rounded-full border transition ${
-                  activeTag === tag 
-                    ? "bg-blue-600 border-blue-600 text-white" 
-                    : "bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
-                }`}
+                className={`px-3 py-1 text-sm rounded-full border transition ${activeTag === tag
+                  ? "bg-blue-600 border-blue-600 text-white"
+                  : "bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
+                  }`}
               >
                 {tag}
               </button>
@@ -118,7 +118,7 @@ function WorkshopList() {
           {filtered.length === 0 ? (
             <div className="text-center bg-gray-800 border border-gray-700 rounded-lg py-12">
               <p className="text-gray-400">No workshops match your search criteria.</p>
-              <button 
+              <button
                 onClick={() => { setSearch(""); setActiveTag("All"); }}
                 className="mt-4 text-blue-400 hover:text-blue-300 text-sm"
               >
@@ -140,14 +140,14 @@ function WorkshopList() {
                     </div>
                     <h3 className="text-lg font-bold text-white mb-1">{w.title}</h3>
                     <p className="text-sm text-gray-400 mb-4">{w.instructor}</p>
-                    
+
                     <div className="text-sm text-gray-500 space-y-1 mb-6">
                       <p>📅 {w.date}</p>
                       <p>📍 {w.location}</p>
                     </div>
                   </div>
-                  
-                  <Link 
+
+                  <Link
                     to={`/workshops/${w.id}`}
                     className="block text-center w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white text-sm font-medium transition"
                   >

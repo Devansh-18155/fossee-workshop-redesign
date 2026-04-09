@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
+{/* All the data are taken from ai */ }
 const workshops = [
   {
     id: 1,
@@ -122,7 +123,7 @@ function WorkshopDetails() {
   return (
     <div className="min-h-screen bg-gray-900 px-4 py-12 md:py-16">
       <div className="max-w-3xl mx-auto space-y-6">
-        
+
         <div>
           <Link to="/workshops" className="text-blue-400 hover:text-blue-300 text-sm mb-4 inline-block">
             &larr; Back to Workshops
@@ -134,7 +135,7 @@ function WorkshopDetails() {
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">{workshop.title}</h1>
             <p className="text-gray-400 text-sm mb-6">Instructor: {workshop.instructor}</p>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-y border-gray-700">
               <div>
                 <p className="text-xs text-gray-500 uppercase">Date</p>
@@ -177,14 +178,13 @@ function WorkshopDetails() {
             </div>
 
             <div className="mt-10">
-              <button 
+              <button
                 onClick={() => setBooked(true)}
                 disabled={booked}
-                className={`w-full py-3 rounded-md font-medium text-white transition ${
-                  booked 
-                    ? "bg-green-600 border border-green-500 cursor-default" 
+                className={`w-full py-3 rounded-md font-medium text-white transition ${booked
+                    ? "bg-green-600 border border-green-500 cursor-default"
                     : "bg-blue-600 hover:bg-blue-700"
-                }`}
+                  }`}
               >
                 {booked ? "✓ You are registered" : "Book This Workshop"}
               </button>

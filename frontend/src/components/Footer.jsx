@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer className="bg-gray-800 border-t border-gray-700 mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        {/* Brand */}
+
+        {/* Description about the workshop */}
         <div>
           <h2 className="text-lg font-bold text-white mb-2">FOSSEE Workshops</h2>
           <p className="text-sm text-gray-400">
@@ -14,7 +14,7 @@ function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Links to navigate into the other specific location */}
         <div>
           <h3 className="font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm text-gray-400">
@@ -25,7 +25,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* Contact information */}
         <div>
           <h3 className="font-semibold text-white mb-3">Contact</h3>
           <p className="text-sm text-gray-400 mb-2">Email: contact@fossee.in</p>
@@ -33,7 +33,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Reservation tag for the webpage */}
       <div className="border-t border-gray-700 text-center py-4 text-sm text-gray-500">
         © {new Date().getFullYear()} FOSSEE, IIT Bombay. All rights reserved.
       </div>
