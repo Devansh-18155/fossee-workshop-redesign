@@ -15,7 +15,7 @@ function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 border-b bg-gray-900 border-gray-700">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -35,19 +35,19 @@ function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.to)
+                className={`px-3 py-2 rounded-md text-sm font-medium ${isActive(link.to)
                     ? "bg-gray-900 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                    : "text-gray-300"
                   }`}
               >
                 {link.label}
               </Link>
             ))}
             <div className="ml-4 flex items-center gap-3">
-              <Link to="/login" className="text-gray-300 hover:text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-700 transition">
+              <Link to="/login" className="text-gray-300 text-sm font-medium px-4 py-2 rounded-md">
                 Login
               </Link>
-              <Link to="/register" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition">
+              <Link to="/register" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium">
                 Register
               </Link>
             </div>
@@ -57,7 +57,7 @@ function Navbar() {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition"
+              className="inline-flex items-center justify-center p-3 rounded-md text-gray-300 focus:outline-none"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -77,26 +77,26 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 border-b border-gray-700 shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden absolute bg-gray-900 top-full left-0 w-full border-b border-gray-700/50">
+          <div className="px-4 pt-2 pb-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(link.to)
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                className={`block px-4 py-3 rounded-lg text-base font-medium ${isActive(link.to)
+                    ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
+                    : "text-gray-300"
                   }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="mt-4 pt-4 border-t border-gray-700 flex flex-col gap-2 px-3 pb-2">
-              <Link to="/login" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-white hover:bg-gray-700 text-base font-medium py-2 px-3 rounded-md transition text-center">
+            <div className="mt-6 pt-6 border-t border-gray-700/50 flex flex-col gap-3">
+              <Link to="/login" onClick={() => setIsOpen(false)} className="block text-gray-300 text-base font-medium py-3 px-4 rounded-lg text-center">
                 Login
               </Link>
-              <Link to="/register" onClick={() => setIsOpen(false)} className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition">
+              <Link to="/register" onClick={() => setIsOpen(false)} className="block w-full text-center bg-blue-600 text-white px-4 py-3 rounded-lg text-base font-medium">
                 Register
               </Link>
             </div>

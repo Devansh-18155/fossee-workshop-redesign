@@ -35,14 +35,14 @@ function Login() {
           </div>
 
           <div className="flex justify-end">
-            <a href="#" className="text-sm text-blue-400 hover:text-blue-300">
+            <a href="#" className="text-sm text-blue-400">
               Forgot password?
             </a>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors mt-4"
+            className="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md mt-4"
           >
             Login
           </button>
@@ -50,7 +50,7 @@ function Login() {
 
         <p className="text-center text-sm text-gray-400 mt-6">
           Don't have an account?{" "}
-          <Link to="/register" className="text-blue-400 hover:text-blue-300">
+          <Link to="/register" className="text-blue-400">
             Register
           </Link>
         </p>

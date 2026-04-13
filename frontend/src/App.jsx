@@ -27,7 +27,7 @@ function App() {
         backgroundColor: '#0a0a0f',
         minHeight: '100vh',
         color: '#ffffff',
-        fontFamily: 'Inter, system-ui, sans-serif'
+        fontFamily: 'system-ui, sans-serif'
       }}>
         <Navbar />
         <main>

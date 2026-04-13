@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-{/* All the data are taken from ai */ }
+
 const workshops = [
   {
     id: 1,
@@ -125,7 +125,7 @@ function WorkshopDetails() {
       <div className="max-w-3xl mx-auto space-y-6">
 
         <div>
-          <Link to="/workshops" className="text-blue-400 hover:text-blue-300 text-sm mb-4 inline-block">
+          <Link to="/workshops" className="text-blue-400 text-sm mb-4 inline-block">
             &larr; Back to Workshops
           </Link>
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 sm:p-8">
@@ -147,7 +147,7 @@ function WorkshopDetails() {
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase">Seats Left</p>
-                <p className={`text-sm mt-1 ${workshop.seats <= 10 ? 'text-red-400 font-medium' : 'text-gray-300'}`}>
+                <p className="text-sm mt-1 text-gray-300">
                   {workshop.seats} / {workshop.totalSeats}
                 </p>
               </div>
@@ -181,9 +181,9 @@ function WorkshopDetails() {
               <button
                 onClick={() => setBooked(true)}
                 disabled={booked}
-                className={`w-full py-3 rounded-md font-medium text-white transition ${booked
+                className={`w-full py-3 rounded-md font-medium text-white ${booked
                     ? "bg-green-600 border border-green-500 cursor-default"
-                    : "bg-blue-600 hover:bg-blue-700"
+                    : "bg-blue-600"
                   }`}
               >
                 {booked ? "✓ You are registered" : "Book This Workshop"}

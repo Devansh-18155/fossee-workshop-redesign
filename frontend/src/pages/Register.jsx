@@ -83,7 +83,7 @@ function Register() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors mt-6"
+            className="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md mt-6"
           >
             Create Account
           </button>
@@ -91,7 +91,7 @@ function Register() {
 
         <p className="text-center text-sm text-gray-400 mt-6">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-400 hover:text-blue-300">
+          <Link to="/login" className="text-blue-400">
             Login
           </Link>
         </p>

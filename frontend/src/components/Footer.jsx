@@ -18,10 +18,10 @@ function Footer() {
         <div>
           <h3 className="font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
-            <li><Link to="/workshops" className="hover:text-blue-400 transition">Workshops</Link></li>
-            <li><Link to="/propose" className="hover:text-blue-400 transition">Propose a Workshop</Link></li>
-            <li><Link to="/register" className="hover:text-blue-400 transition">Register</Link></li>
+            <li><Link to="/" className="block py-1.5">Home</Link></li>
+            <li><Link to="/workshops" className="block py-1.5">Workshops</Link></li>
+            <li><Link to="/propose" className="block py-1.5">Propose a Workshop</Link></li>
+            <li><Link to="/register" className="block py-1.5">Register</Link></li>
           </ul>
         </div>
 

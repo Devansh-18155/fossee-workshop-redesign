@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-{/* All the data values and description are ai generated */ }
+
 const workshops = [
   {
     id: 1,
@@ -103,9 +103,9 @@ function WorkshopList() {
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
-                className={`px-3 py-1 text-sm rounded-full border transition ${activeTag === tag
+                className={`px-3 py-1 text-sm rounded-full border ${activeTag === tag
                   ? "bg-blue-600 border-blue-600 text-white"
-                  : "bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
+                  : "bg-gray-800 border-gray-700 text-gray-400"
                   }`}
               >
                 {tag}
@@ -120,7 +120,7 @@ function WorkshopList() {
               <p className="text-gray-400">No workshops match your search criteria.</p>
               <button
                 onClick={() => { setSearch(""); setActiveTag("All"); }}
-                className="mt-4 text-blue-400 hover:text-blue-300 text-sm"
+                className="mt-4 text-blue-400 text-sm"
               >
                 Clear filters
               </button>
@@ -128,13 +128,13 @@ function WorkshopList() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map(w => (
-                <div key={w.id} className="bg-gray-800 border border-gray-700 rounded-lg p-5 flex flex-col justify-between hover:border-gray-600 transition">
+                <div key={w.id} className="bg-gray-800 border border-gray-700 rounded-lg p-5 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start mb-2">
                       <span className="text-xs font-semibold px-2 py-1 bg-gray-700 rounded text-gray-300">
                         {w.tag}
                       </span>
-                      <span className={`text-xs font-semibold ${w.seats <= 10 ? 'text-red-400' : 'text-gray-400'}`}>
+                      <span className="text-xs font-semibold text-gray-400">
                         {w.seats} / {w.totalSeats} seats
                       </span>
                     </div>
@@ -149,7 +149,7 @@ function WorkshopList() {
 
                   <Link
                     to={`/workshops/${w.id}`}
-                    className="block text-center w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white text-sm font-medium transition"
+                    className="block text-center w-full py-2 bg-blue-600 rounded-md text-white text-sm font-medium"
                   >
                     View Details
                   </Link>
