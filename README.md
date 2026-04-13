@@ -36,11 +36,13 @@ npm run dev
 5) Open `http://localhost:5173` in your browser.
 
 
+
 Question. What Design Principles Did I Follow?
 
 When I started looking at the original site, the first thing I noticed was that it felt outdated and wasn't comfortable to use on a phone. Since most students access things on mobile, I made that my starting point.
 
 I went with a dark theme because it's easier on the eyes, especially for students who might be browsing late at night. I used purple and blue gradients to keep things consistent and give the site a modern feel without going overboard.
+
 
 
 
@@ -52,11 +54,15 @@ I also made sure all buttons are large enough to tap comfortably on a touchscree
 
 
 
+
+
 Question. What Trade-offs Did I Make?
 
 The biggest trade-off was between visual richness and performance. I wanted the site to look great with glassmorphism effects and animated backgrounds, but I was careful not to go too far. I used CSS-only animations instead of JavaScript-heavy animation libraries, which keeps the bundle small and the site fast.
 
 One honest trade-off the glassmorphism blur effect can be a bit heavy on older Android phones. But since it's purely a visual enhancement, the site still works fine even if that effect doesn't render perfectly.
+
+
 
 
 
@@ -67,11 +73,15 @@ The hardest part was getting the dark theme to apply consistently across all pag
 Another tricky bit was the Navbar making it transparent on the hero section but adding a blur background when you scroll down took a bit of work with a scroll event listener, but it ended up looking really smooth.
 
 
+
+
 How I approached it:
 
 The most challenging part for me was honestly just getting started the original project is a Django app with HTML templates, and converting that mental model into a React component structure took some thinking.
 
 I began by going through all the HTML template files in the repo one by one to understand what pages existed and what each one was supposed to do. Once I had a clear picture, I mapped each Django template to a React page component and started building them one at a time.
+
+
 
 
 Tech Stack Used:
