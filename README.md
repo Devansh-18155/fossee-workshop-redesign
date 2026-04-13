@@ -5,25 +5,7 @@ This is my submission for the FOSSEE Python Screening Task. I redesigned the exi
 Original Repository
 (https://github.com/FOSSEE/workshop_booking)
 
-Before (Original Site)
-Home Page-> (./beforeScreenShots/sc1.png)
-Home Page-> (./beforeScreenShots/sc3.png)
-Login Page-> (./beforeScreenShots/sc5.png)
-
-After (Redesigned)
-Home Page-> (./afterScreenShots/scc1.png)
-Home Page-> (./afterScreenShots/scc2.png)
-Home Page-> (./afterScreenShots/scc3.png)
-Home Page-> (./afterScreenShots/scc4.png)
-Home Page-> (./afterScreenShots/scc5.png)
-Workshops Page-> (./afterScreenShots/scc6.png)
-Workshops Page-> (./afterScreenShots/scc7.png)
-Propose Page-> (./afterScreenShots/scc8.png)
-Propose Page-> (./afterScreenShots/scc9.png)
-Profile Page-> (./afterScreenShots/scc10.png)
-Profile Page-> (./afterScreenShots/scc11.png)
-Login Page-> (./afterScreenShots/scc12.png)
-Register Page-> (./afterScreenShots/scc13.png)
+The workshop_booking folder also contains the before and after screenshots of the ui/ux design.
 
 Prerequisites:
 -> Node.js
