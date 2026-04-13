@@ -77,15 +77,29 @@ I began by going through all the HTML template files in the repo one by one to u
 Tech Stack Used:
 
 -> React 18: Component-based UI
+
+
 -> Vite: Fast development server and bundler
+
+
 -> Tailwind CSS v3: Utility-first styling
+
+
 -> React Router DOM v7: Client-side routing
 
 
 Submission Checklist:
 
 -> [Y] Code is readable and well-structured
+
+
 -> [Y] Git history shows progressive work
+
+
 -> [Y] README includes reasoning answers and setup instructions
+
+
 -> [Y] Screenshots included
+
+
 -> [Y] Code is documented where necessary
