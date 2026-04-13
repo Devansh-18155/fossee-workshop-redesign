@@ -37,7 +37,7 @@ npm run dev
 
 
 
-Question. What Design Principles Did I Follow?
+Question 1) What Design Principles Did I Follow?
 
 When I started looking at the original site, the first thing I noticed was that it felt outdated and wasn't comfortable to use on a phone. Since most students access things on mobile, I made that my starting point.
 
@@ -46,7 +46,7 @@ I went with a dark theme because it's easier on the eyes, especially for student
 
 
 
-Question. How Did I Make It Responsive?
+Question 2) How Did I Make It Responsive?
 
 I built everything mobile-first, meaning I designed for small screens first and then adjusted for bigger ones. I used Tailwind CSS breakpoints throughout things like the navigation menu collapse on mobile, the workshop cards go from 3 columns on desktop to 1 column on phones, and forms stack vertically on small screens.
 
@@ -56,7 +56,7 @@ I also made sure all buttons are large enough to tap comfortably on a touchscree
 
 
 
-Question. What Trade-offs Did I Make?
+Question 3) What Trade-offs Did I Make?
 
 The biggest trade-off was between visual richness and performance. I wanted the site to look great with glassmorphism effects and animated backgrounds, but I was careful not to go too far. I used CSS-only animations instead of JavaScript-heavy animation libraries, which keeps the bundle small and the site fast.
 
@@ -66,7 +66,7 @@ One honest trade-off the glassmorphism blur effect can be a bit heavy on older A
 
 
 
-Question. What Was the Most Challenging Part?
+Question 4) What Was the Most Challenging Part?
 
 The hardest part was getting the dark theme to apply consistently across all pages. Tailwind CSS applies light-mode base styles by default, so even when I set the background to dark in my CSS, some pages would still flash white or show light-colored form inputs.
 
